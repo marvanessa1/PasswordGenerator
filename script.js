@@ -4,12 +4,12 @@ var generateBtn = document.querySelector("#generate");
 //Declared variables
 
 var NumericCharacters = ["0","1","2","3","4","5","6","7","8","9"];
-var LowecaseCharacters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var LowercaseCharacters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var UppercaseCharacters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var SpecialCharacters = ["`","~","!","@","#","$","%","^","&","*","(",")","-","=","_","+","[","]","{","}","|",";","'",",",".","/","<",">","?",":"];
 
 console.log(NumericCharacters);
-console.log(LowecaseCharacters);
+console.log(LowercaseCharacters);
 console.log(UppercaseCharacters);
 console.log(SpecialCharacters);
 
@@ -46,6 +46,33 @@ function generatePassword(){
 
     for (var i=0; i<NumericCharacters.length; i++){
       passwordCharacters.push(NumericCharacters[i]);
+    }
+  }
+
+  if (LowercaseInput){
+    var randomLowercase = Math.floor(Math.randomLowercase() * LowercaseCharacters.length);
+    password.push(LowercaseCharacters[randomLowercase]);
+
+    for (var i=0; i<LowercaseCharacters.length; i++){
+      passwordCharacters.push(LowercaseCharacters[i]);
+    }
+  }
+
+  if (UppercaseInput){
+    var randomUppercase = Math.floor(Math.randomUppercase() * UppercaseCharacters.length);
+    password.push(UppercaseCharacters[randomUppercase]);
+
+    for (var i=0; i<UppercaseCharacters.length; i++){
+      passwordCharacters.push(UppercaseCharacters[i]);
+    }
+  }
+
+  if (SpecialInput){
+    var randomSpecial = Math.floor(Math.randomSpecial() * SpecialCharacters.length);
+    password.push(SpecialCharacters[randomSpecial]);
+
+    for (var i=0; i<SpecialCharacters.length; i++){
+      passwordCharacters.push(SpecialCharacters[i]);
     }
   }
 }
