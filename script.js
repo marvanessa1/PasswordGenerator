@@ -16,13 +16,29 @@ console.log(SpecialCharacters);
 // Generate Password part. "Fasten your seatbelts!,..., It's going to be a bumpy ride!" - Shrunken Head from Harry Potter and the Prisoner of Azkaban
 function generatePassword(){
   var passwordLength = prompt("How many characters would you like your password to contain?");
-  return "";
+
+// Conditional statements for password length & inputs
+  if (passwordLength < 8){
+    alert("Password must contain 8 or more characters");
+    return "";
+  } else if (passwordLength > 128){
+    alert("Password must contain 128 characters or less ");
+    return "";
+  }else {
+    var NumericInput = confirm("Click OK to include numeric characters");
+    var LowercaseInput = confirm("Click OK to include lower case characters");
+    var UppercaseInput = confirm("Click OK to include upper case characters");
+    var SpecialInput = confirm("Click OK to include special characters");
+  }
+
+  // Conditional statement if user chose no character types
+  if (!NumericInput && !LowercaseInput && !UppercaseInput && !SpecialInput){
+    alert("You must select at least one character type");
+    return "";
+  }
 }
 
-// var NumericInput = prompt("How many characters would you like your password to contain?");
-// var LowercaseInput = confirm("Click OK to include lower case characters");
-// var UppercaseInput = confirm("Click OK to include upper case characters");
-// var SpecialInput = confirm("Click OK to include special characters");
+
 
 // Write password to the #password input
 function writePassword() {
