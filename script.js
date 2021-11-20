@@ -36,6 +36,18 @@ function generatePassword(){
     alert("You must select at least one character type");
     return "";
   }
+
+  var passwordCharacters=[];
+  var password= [];
+
+  if (NumericInput){
+    var randomnumber = Math.floor(Math.randomnumber() * NumericCharacters.length);
+    password.push(NumericCharacters[randomnumber]);
+
+    for (var i=0; i<NumericCharacters.length; i++){
+      passwordCharacters.push(NumericCharacters[i]);
+    }
+  }
 }
 
 
