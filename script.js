@@ -16,22 +16,22 @@ console.log(SpecialCharacters);
 // Generate Password part. "Fasten your seatbelts!,..., It's going to be a bumpy ride!" - Shrunken Head from Harry Potter and the Prisoner of Azkaban
 function generatePassword(){
   var passwordLength = prompt("How many characters would you like your password to contain?");
-
-// Conditional statements for password length & inputs
   if (passwordLength < 8){
     alert("Password must contain 8 or more characters");
-    return "";
-  } else if (passwordLength > 128){
+      return "";
+  } 
+    else if (passwordLength > 128){
     alert("Password must contain 128 characters or less ");
-    return "";
-    } else  {
+      return "";
+    } 
+    else  {
     var NumericInput = confirm("Click OK to include numeric characters");
     var LowercaseInput = confirm("Click OK to include lower case characters");
     var UppercaseInput = confirm("Click OK to include upper case characters");
     var SpecialInput = confirm("Click OK to include special characters");
-  }
+  
 
-  // Conditional statement if user chose no character types
+
   if (!NumericInput && !LowercaseInput && !UppercaseInput && !SpecialInput){
     alert("You must select at least one character type");
     return "";
@@ -45,7 +45,7 @@ function generatePassword(){
     password.push(NumericCharacters[randomnumber]);
 
     for (var i=0; i<NumericCharacters.length; i++){
-      passwordCharacters.push(NumericCharacters[i]);
+      passwordCharacters = passwordCharacters.concat(NumericCharacters[i]);
     }
   }
 
@@ -54,7 +54,7 @@ function generatePassword(){
     password.push(LowercaseCharacters[randomLowercase]);
 
     for (var i=0; i<LowercaseCharacters.length; i++){
-      passwordCharacters.push(LowercaseCharacters[i]);
+      passwordCharacters = passwordCharacters.concat(LowercaseCharacters[i]);
     }
   }
 
@@ -63,7 +63,7 @@ function generatePassword(){
     password.push(UppercaseCharacters[randomUppercase]);
 
     for (var i=0; i<UppercaseCharacters.length; i++){
-      passwordCharacters.push(UppercaseCharacters[i]);
+      passwordCharacters = passwordCharacters.concat(UppercaseCharacters[i]);
     }
   }
 
@@ -72,17 +72,17 @@ function generatePassword(){
     password.push(SpecialCharacters[randomSpecial]);
 
     for (var i=0; i<SpecialCharacters.length; i++){
-      passwordCharacters.push(SpecialCharacters[i]);
+      passwordCharacters = passwordCharacters.concat(SpecialCharacters[i]);
     }
   }
 
   for (var i=0; i < passwordLength; i++) {
     var randomPassword = Math.floor(Math.random() * passwordCharacters.length)
-    password.push(passwordCharacters[randomPassword]);
+    password = password.concat(passwordCharacters[randomPassword]);
   }
   return password.join("");
 }
-
+}
 
 
 // Write password to the #password input
