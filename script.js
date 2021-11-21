@@ -24,7 +24,7 @@ function generatePassword(){
   } else if (passwordLength > 128){
     alert("Password must contain 128 characters or less ");
     return "";
-  }else {
+    } else  {
     var NumericInput = confirm("Click OK to include numeric characters");
     var LowercaseInput = confirm("Click OK to include lower case characters");
     var UppercaseInput = confirm("Click OK to include upper case characters");
@@ -41,7 +41,7 @@ function generatePassword(){
   var password= [];
 
   if (NumericInput){
-    var randomnumber = Math.floor(Math.randomnumber() * NumericCharacters.length);
+    var randomnumber = Math.floor(Math.random() * NumericCharacters.length);
     password.push(NumericCharacters[randomnumber]);
 
     for (var i=0; i<NumericCharacters.length; i++){
@@ -50,7 +50,7 @@ function generatePassword(){
   }
 
   if (LowercaseInput){
-    var randomLowercase = Math.floor(Math.randomLowercase() * LowercaseCharacters.length);
+    var randomLowercase = Math.floor(Math.random() * LowercaseCharacters.length);
     password.push(LowercaseCharacters[randomLowercase]);
 
     for (var i=0; i<LowercaseCharacters.length; i++){
@@ -59,7 +59,7 @@ function generatePassword(){
   }
 
   if (UppercaseInput){
-    var randomUppercase = Math.floor(Math.randomUppercase() * UppercaseCharacters.length);
+    var randomUppercase = Math.floor(Math.random() * UppercaseCharacters.length);
     password.push(UppercaseCharacters[randomUppercase]);
 
     for (var i=0; i<UppercaseCharacters.length; i++){
@@ -68,13 +68,19 @@ function generatePassword(){
   }
 
   if (SpecialInput){
-    var randomSpecial = Math.floor(Math.randomSpecial() * SpecialCharacters.length);
+    var randomSpecial = Math.floor(Math.random() * SpecialCharacters.length);
     password.push(SpecialCharacters[randomSpecial]);
 
     for (var i=0; i<SpecialCharacters.length; i++){
       passwordCharacters.push(SpecialCharacters[i]);
     }
   }
+
+  for (var i=0; i < passwordLength; i++) {
+    var randomPassword = Math.floor(Math.random() * passwordCharacters.length)
+    password.push(passwordCharacters[randomPassword]);
+  }
+  return password.join("");
 }
 
 
