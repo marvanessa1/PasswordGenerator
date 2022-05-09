@@ -8,7 +8,7 @@ This application lets a user create a password.  When running through the applic
 The application runs through if and else conditional code statements to generate randomized values to be inlcuded in user password pool to then create one final password with randomized characters.
 
 ## Deployed Application
-URL of deployed application [Password Generator] (https://marvanessa1.github.io/PasswordGenerator/).
+URL of deployed application [Password Generator](https://marvanessa1.github.io/PasswordGenerator/).
 
 ## Password Generator Mock-Up
 
